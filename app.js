@@ -7,8 +7,10 @@ const path = require("path");
 
 app.use(express.static("public"));
 
-app.listen(3000, ()=>{
-    console.log("servidor corriendo en puerto 3000");
+let port = 3000 || process.env.PORT;
+
+app.listen(port, ()=>{
+    console.log("servidor corriendo en puerto "+ port);
 })
 
 app.get("/", (req, res)=>{
