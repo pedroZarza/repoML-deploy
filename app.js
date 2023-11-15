@@ -7,10 +7,8 @@ const path = require("path");
 
 app.use(express.static("public"));
 
-let port = 3000 || process.env.PORT;
-
-app.listen(port, ()=>{
-    console.log("servidor corriendo en puerto "+ port);
+app.listen(3000, ()=>{
+    console.log("servidor corriendo en puerto 3000");
 })
 
 app.get("/", (req, res)=>{
@@ -18,7 +16,7 @@ app.get("/", (req, res)=>{
 })
 
 
-app.get("/register", (req, res)=>{
+ app.get("/register", (req, res)=>{
     res.sendFile(path.resolve("./views/register.html"));
 })
 
